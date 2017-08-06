@@ -1,0 +1,148 @@
+/* positioning of main content */
+main {
+  left: 250px !important;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: .3s;
+  overflow-y: scroll; /* THIS IS NECESSARY */
+}
+
+button#sidebar-button span{
+  width: 40px;
+  height: 6px;
+  background: grey;
+  margin: 6px 5px;
+  display: block;
+  border-radius: 1.5px;
+}
+
+button#sidebar-button {
+  padding: 10px;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  border: none;
+  z-index: 1001;
+}
+
+button#sidebar-button + header {
+  margin-top: 70px;
+}
+
+nav#sidebar {
+  color: lightgrey;
+}
+
+nav#sidebar ul li > ul li a {
+  color: white;
+}
+
+nav#sidebar ul li > ul li a:hover {
+  color: #FFB03B;
+  transition: .2s;
+}
+
+nav#sidebar > ul > li a {
+  color: lightgrey; /* Sign Out link */
+}
+
+nav#sidebar > ul > li a:hover {
+  color: #FFB03B; /* Sign Out link */
+  transition: .2s;
+}
+
+nav#sidebar {
+  background-color: #468966;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 250px;
+  font-size: 24pt;
+  transition: .3s;
+}
+
+nav#sidebar a {
+  text-decoration: none;
+}
+
+nav#sidebar ul li > ul li a {
+  font-size: 18pt;
+}
+
+nav#sidebar > ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* no extra padding under profile picture */
+nav#sidebar > ul > li:first-child {
+  padding-bottom: 0px;
+}
+
+nav#sidebar > ul > li:last-child {
+  padding-top: 15px; /* Sign Out link */
+}
+
+nav#sidebar > ul > li {
+  padding-bottom: 20px;
+}
+
+nav#sidebar ul li > ul {
+  padding-left: 20px;
+}
+
+nav#sidebar ul li > ul li {
+  padding-top: 5px;
+  list-style-type: none;
+}
+
+img#profile {
+  display: block;
+}
+
+nav#sidebar li:nth-child(2),
+nav#sidebar li:nth-child(3),
+nav#sidebar li:nth-child(4),
+img#profile{
+  margin: auto;
+  width: 180px;
+}
+
+/* image centering */
+nav#sidebar li:first-child {
+  margin: auto;
+  width: 190px;
+}
+
+/* image border and shape */
+span.circular-frame {
+  display: inline-block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10%;
+  margin: 30px 0px;
+  border: 5px solid white;
+}
+
+@media screen and (max-width: 900px) {
+  button#sidebar-button {
+    visibility: visible;
+  }
+  nav#sidebar {
+    transition: .3s;
+    left: -250px !important;
+  }
+  main {
+    left: 0 !important;
+    transition: .3s;
+  }
+}

@@ -1,0 +1,66 @@
+body {
+  margin: 40px;
+  text-align: center;
+  background-color: white;
+  color: grey;
+}
+
+body h1 {
+  font-size: 50pt;
+}
+
+main#about {
+  font-size: 14pt;
+}
+
+img {
+  width: 100%;
+  margin: auto;
+}
+
+section {
+  max-width: 800px;
+  padding: 20px;
+  margin: 40px auto;
+  clear: both;
+  color: white;
+}
+
+main#about section:nth-child(2) {
+  background-color: #B64926;
+}
+
+main#about section:nth-child(3) {
+  background-color: #468966;
+}
+
+main#about section:nth-child(4) {
+  background-color: #3498DB;
+}
+
+main#about span {
+  padding: 0px;
+  border-radius: 15px;
+  max-height: 400px;
+  max-width: 400px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+li {
+  text-align: left;
+  max-width: 400px;
+  margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+p {
+  font-size: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: justify;
+}

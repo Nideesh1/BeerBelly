@@ -1,0 +1,248 @@
+/*Styling for grid/card contents on brewery.html and community.html pages.*/
+
+main {
+  color: grey;
+  font-size: 28pt;
+}
+
+h1, h3 {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+section#card-content {
+  margin: auto;
+  padding: 0 20px;
+}
+
+section#card-content ul {
+  -webkit-column-count: 3;
+  -moz-column-count:    3;
+  column-count:         3;
+  -webkit-column-gap: 35px;
+  -moz-column-gap: 35px;
+  column-gap: 35px;
+  padding: 0 30px;
+  margin: 30px 0;
+}
+
+section#card-content a {
+  text-decoration: none;
+}
+
+section#card-content ul li {
+  width: 100%;
+  padding-top: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-flex;
+  font-family: 'Bebas Neue', 'sans-serif';
+  background-color: black;
+}
+
+section#card-content ul li img {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+}
+
+section#card-content ul li img.card-image {
+  opacity: 0.75;
+}
+
+section#card-content ul li#addnew {
+  background-color: black;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 45pt;
+  width: 100%;
+  position: relative;
+}
+
+section#card-content ul li#addnew span {
+  color: grey;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  padding-top: 42%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+section#card-content ul li#addnew span:hover ~ img{
+  opacity: 0.7;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+section#card-content ul li#addnew span:hover{
+  color: white;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+section#card-content ul li button {
+  width: 30%;
+  border: none;
+  position: absolute;
+  height: 25%;
+  bottom: 0;
+  padding: 0;
+  background-color: transparent;
+  z-index: 999;
+  display: inline-block;
+}
+
+section#card-content ul li button:nth-child(1) {
+  left: 0;
+}
+
+section#card-content ul li button:nth-child(2) {
+  right: 0;
+}
+
+section#card-content ul li button img {
+  width: 40%;
+  margin: auto;
+}
+
+button.edit img, button.fav img {
+  opacity: 0.8;
+}
+
+button.edit:hover img, button.fav:hover img {
+  opacity: 1;
+}
+
+section#card-content ul li p {
+  color: white;
+  z-index: 998;
+  padding: 50px 30px;
+  font-size: 25pt;
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0px;
+  display: inline;
+  text-align: left;
+  font-family: 'Bebas Neue', 'sans-serif';
+}
+
+section#card-content ul li img.delete {
+  display: block;
+  z-index: 999;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  left: auto;
+  bottom: auto;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+section#card-content ul li img.delete:hover {
+  transition: .3s;
+  opacity: 1;
+}
+
+@keyframes deletepopup {
+  from {
+    -ms-transform: scale(0.9); /* IE 9 */
+    -webkit-transform: scale(0.9); /* Chrome, Safari, Opera */
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Chrome, Safari, Opera */
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+div.delete-confirm {
+  background-color: whitesmoke;
+  color: dimgrey;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: block;
+  text-align: center;
+  animation-name: deletepopup;
+  animation-duration: .2s;
+  display: none;
+}
+
+div.delete-confirm span {
+  display: block;
+  vertical-align: middle;
+  margin-top: 50px;
+  width: 100%;
+}
+
+div.delete-confirm a.confirm,
+div.delete-confirm a.cancel {
+  margin: 10px auto;
+  padding: 0 10px;
+  padding-top: 10px;
+  height: 40px;
+  display: block;
+  border-radius: 2px;
+  background-color: blue;
+  margin-bottom: 5px;
+  width: 60%;
+  color: white;
+}
+
+div.delete-confirm a.confirm {
+  background-color: #468966;
+}
+
+div.delete-confirm a.cancel {
+  background-color: #B64926;
+}
+
+@media screen and (max-width: 1100px) {
+  section#card-content ul {
+    -webkit-column-count: 2;
+    -moz-column-count:    2;
+    column-count:         2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section#card-content ul {
+    -webkit-column-count: 1;
+    -moz-column-count:    1;
+    column-count:         1;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  section#card-content ul li p {
+    font-size: 20pt;
+  }
+  section#card-content ul li#addnew {
+    font-size: 35pt;
+  }
+}

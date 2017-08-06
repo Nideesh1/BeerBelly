@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Beer Selection</title>
+  <link rel="stylesheet" href="../css/main.min.css" />
+  <link rel="stylesheet" href="../css/font.css" />
+  <link rel="stylesheet" href="../css/modal.min.css" />
+  <link rel="stylesheet" href="../css/sidebar-nav.min.css" />
+  <link rel="stylesheet" href="../css/card-content.min.css" />
+</head>
+<body>
+  <main>
+    <button id="sidebar-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <header>
+      <h1>Brewery Name</h1>
+    </header>
+    <section id="card-content">
+      <ul id="card-list">
+        <li id="addnew" class="newbeer">
+          <span>+ Add New</span>
+          <img src="../../images/placeholder.png"  alt="new beer">
+        </li>
+        <script id="card-template" type="text/x-jquery-tmpl">
+          <li>
+            <button class="fav"><img src="../../images/${fav}.png" alt="favorite"></button>
+            <button class="edit"><img src="../../images/edit.png" alt="edit"></button>
+            <img class="card-image" src="${image}" alt="beer image">
+            <p class="card-name">${name}</p>
+            <img class="delete" src="../../images/delete.png" alt="delete">
+            <div class="delete-confirm">
+              <span>delete?</span>
+              <a href="#" class="confirm">Yes</a>
+              <a href="#" class="cancel">No</a>
+            </div>
+          </li>
+        </script>
+      </ul>
+    </section>
+    <section id="addnew-modal" class="modal">
+      <a href="#" class="close"></a>
+      <h3>Add New Beer</h3>
+      <img src="../../images/pint.png" alt="beer icon">
+      <p id="addnew-error" class="modal-error">error</p>
+      <form method="post" action="./brewery.html">
+        <label for="beer-name">Beer Name:</label>
+        <input id="beer-name" type="text" name="name" maxlength="100" required autofocus/>
+        <label for="beer-brewery-name">Brewery Name:</label>
+        <input id="beer-brewery-name" type="text" name="brewery" maxlength="100" required/>
+        <label for="beer-type">Beer Type:</label>
+        <select id="beer-type" name="type" required>
+          <option value="">--</option>
+          <option value="Ale">Ale</option>
+          <option value="Lager">Lager</option>
+          <option value="Stout">Stout</option>
+          <option value="Malt">Malt</option>
+        </select>
+        <label for="beer-style">Beer Style:</label>
+        <select id="beer-style" name="style" required>
+        <option value="">--</option>
+        <option value="Amber">Amber</option>
+        <option value="Blonde">Blonde</option>
+        <option value="Brown">Brown</option>
+        <option value="Cream">Cream</option>
+        <option value="Dark">Dark</option>
+        <option value="Fruit">Fruit</option>
+        <option value="Golden">Golden</option>
+        <option value="Honey">Honey</option>
+        <option value="India Pale Ale">India Pale Ale</option>
+        <option value="Light">Light</option>
+        <option value="Lime">Lime</option>
+        <option value="Pale">Pale</option>
+        <option value="Pilsner">Pilsner</option>
+        <option value="Red">Red</option>
+        <option value="Strong">Strong</option>
+        <option value="Wheat">Wheat</option>
+      </select>
+      <input type="submit" value="Add">
+    </form>
+  </section>
+  <section id="edit-modal" class="modal">
+    <a href="#" class="close"></a>
+    <h3>Edit Beer</h3>
+    <img src="../../images/pint.png" alt="beer icon">
+    <p id="edit-error" class="modal-error">error</p>
+    <form method="post" action="./brewery.html">
+      <label for="beer-name-edit">Beer Name:</label>
+      <input id="beer-name-edit" type="text" name="name" maxlength="100" required/>
+      <label for="beer-brewery-name-edit">Brewery Name:</label>
+      <input id="beer-brewery-name-edit" type="text" name="brewery" maxlength="100" required/>
+      <label for="beer-type-edit">Beer Type:</label>
+      <select id="beer-type-edit" name="type" required>
+        <option value="">--</option>
+        <option value="Ale">Ale</option>
+        <option value="Lager">Lager</option>
+        <option value="Stout">Stout</option>
+        <option value="Malt">Malt</option>
+      </select>
+      <label for="beer-style-edit">Beer Style:</label>
+      <select id="beer-style-edit" name="style" required>
+      <option value="">--</option>
+      <option value="Amber">Amber</option>
+      <option value="Blonde">Blonde</option>
+      <option value="Brown">Brown</option>
+      <option value="Cream">Cream</option>
+      <option value="Dark">Dark</option>
+      <option value="Fruit">Fruit</option>
+      <option value="Golden">Golden</option>
+      <option value="Honey">Honey</option>
+      <option value="India Pale Ale">India Pale Ale</option>
+      <option value="Light">Light</option>
+      <option value="Lime">Lime</option>
+      <option value="Pale">Pale</option>
+      <option value="Pilsner">Pilsner</option>
+      <option value="Red">Red</option>
+      <option value="Strong">Strong</option>
+      <option value="Wheat">Wheat</option>
+    </select>
+    <input type="submit" value="Edit">
+  </form>
+</section>
+
+</main>
+<nav id="sidebar">
+  <ul>
+    <li>
+      <a href="profile.html">
+        <span class="frame">
+          <img id="profile" src="../../images/profile.png" alt="profile image">
+        </span>
+      </a>
+    </li>
+    <li>Favorites
+      <ul id="user-favs">
+        <li id="fav-breweries"><a href="community.html">Breweries</a></li>
+        <li id="fav-beers"><a href="brewery.html">Beers</a></li>
+      </ul>
+    </li>
+    <li>View All
+      <ul id="view-all">
+        <li id="all-breweries"><a href="community.html">Breweries</a></li>
+        <li id="all-beers"><a href="brewery.html">Beers</a></li>
+      </ul>
+    </li>
+    <li><a class="logout" href="index.html">Sign Out</a></li>
+  </ul>
+</nav>
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script src="../js/shared.js"></script>
+<script src="../js/jquery-3.1.1.slim.min.js"></script>
+<script src="../js/jquery.tmpl.min.js"></script>
+<script src="../js/interactions.min.js"></script>
+</body>
+</html>

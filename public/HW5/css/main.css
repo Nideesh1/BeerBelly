@@ -1,0 +1,113 @@
+/*Style that will be part of the default theme of BeerBelly*/
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Font property */
+body, input[type=submit] {
+  font-family: 'Bebas Neue', 'San Serif';
+  word-spacing: 3px;
+  letter-spacing: 2px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input[type=text],
+input[type=submit],
+input[type=email],
+input[type=password],
+input[type=button],
+select {
+  padding: 0 10px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: white;
+  margin: 10px auto;
+}
+
+select {
+  border: 1px white solid;
+  border-radius: 2px;
+  background-color: white;
+  font-family: 'Roboto', 'San Serif';
+
+  /* Creates a grey triangle in select dropdown */
+  background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%);
+  background-position:
+  calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  calc(100% - 2.5em) 0.5em;
+  background-size:
+  5px 5px,
+  5px 5px;
+  background-repeat: no-repeat;
+}
+
+label {
+  text-align: left;
+  margin: 10px auto;
+}
+
+button:focus, input {
+  outline:0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input[type=submit],
+input[type=button] {
+  text-align: center;
+  display: block;
+  background-color: white;
+  font-size: 25px;
+  padding-top: 5px;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+  transition-duration: .5s;
+}
+
+p, section li {
+  font-family: 'Roboto', 'San Serif';
+  letter-spacing: 1px;
+  word-spacing: normal;
+}
+
+a#floating-link {
+  z-index: 1000;
+  text-decoration: none;
+  text-align: center;
+  color: #808080;
+  background: white;
+  position: fixed;
+  font-size: 18pt;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 60px;
+  padding-top: 15px;
+}
+
+a#floating-link:hover {
+  color: #FF6138;
+  transition: .5s;
+}
+
+a#floating-link + h1 {
+  margin-top: 80px !important;
+}

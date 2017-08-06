@@ -1,0 +1,148 @@
+main {
+  font-size: 28pt;
+}
+
+h1, h3 {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+a#sign-up-link {
+  z-index: 1000;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background: #3498DB;
+  position: fixed;
+  font-size: 18pt;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 60px;
+  padding-top: 15px;
+}
+
+a#sign-up-link:hover {
+  color: black;
+  transition: .2s;
+}
+
+a#sign-up-link + header {
+  margin-top: 80px;
+}
+
+nav#breadcrumbs {
+  text-align: center;
+  font-size: 16pt;
+  padding: 0 10px;
+}
+
+nav#breadcrumbs a {
+  text-decoration: none;
+  color: darkgrey;
+}
+
+nav#breadcrumbs a:hover {
+  color: grey;
+  transition: .2s;
+}
+
+/* font color */
+main {
+  color: grey;
+}
+
+section#card-content {
+  margin: auto;
+  padding: 0 20px;
+}
+
+section#card-content ul {
+  -webkit-column-count: 3;
+  -moz-column-count:    3;
+  column-count:         3;
+  padding: 0 30px;
+  margin: 30px 0;
+}
+
+section#card-content img {
+  width: 100%;
+  height: auto;
+}
+
+section#card-content a {
+  text-decoration: none;
+}
+
+section#card-content ul li {
+  position: relative;
+  margin-bottom: 30px;
+  display: inline-block;
+  width: 100%;
+}
+
+section#card-content ul li button {
+  width: 50%;
+  border: none;
+  position: absolute;
+  height: auto;
+  bottom: 0;
+  background-color: darkgrey;
+}
+
+section#card-content ul li button:hover {
+  background: grey;
+  transition: .3s;
+}
+
+section#card-content ul li button:active {
+  background: dimgrey;
+  transition: .2s;
+}
+
+section#card-content ul li button:nth-child(3) {
+  left: 0;
+}
+
+section#card-content ul li button:nth-child(2) {
+  right: 0;
+}
+
+section#card-content ul li button img {
+  margin: auto;
+  width: 25%;
+  padding: 15px;
+}
+
+section#card-content ul li p {
+  color: grey;
+  z-index: 999;
+  padding: 30px;
+  font-size: 14pt;
+  position: absolute;
+  bottom: 30%;
+  top: 0;
+  margin: 0px;
+  text-align: justify;
+  display: none; /* This line hides the paragraph */
+}
+
+@media screen and (max-width: 1100px) {
+  section#card-content ul {
+    -webkit-column-count: 2;
+    -moz-column-count:    2;
+    column-count:         2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section#card-content ul {
+    -webkit-column-count: 1;
+    -moz-column-count:    1;
+    column-count:         1;
+  }
+}

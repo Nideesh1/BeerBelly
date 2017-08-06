@@ -1,0 +1,132 @@
+/*Styling for modal popups on brewery and community html*/
+
+@keyframes popup {
+  from {
+    -ms-transform: scale(0.9) translate(0px,100px); /* IE 9 */
+    -webkit-transform: scale(0.9) translate(0px,100px); /* Chrome, Safari, Opera */
+    transform: scale(0.9) translate(0px,100px);
+    opacity: 0;
+  }
+  to {
+    -ms-transform: scale(1) translate(0px,0px); /* IE 9 */
+    -webkit-transform: scale(1) translate(0px,0px); /* Chrome, Safari, Opera */
+    transform: scale(1) translate(0px,0px);
+    opacity: 1;
+  }
+}
+
+section.modal {
+  padding: 70px 0;
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  color: white;
+  background: #96CEB4;
+  z-index: 1000;
+  animation-name: popup;
+  animation-duration: .2s;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+section.modal h3 {
+  text-align: center;
+  font-size: 40pt;
+}
+
+section.modal p.modal-error {
+  font-size: 14pt;
+  text-align: center;
+  color: #FF6138;
+  display: none;
+}
+
+section.modal img {
+  width: 120px;
+  display: block;
+  margin: 50px auto;
+}
+
+.close {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
+  transition: .2s;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  content: ' ';
+  left: 20px;
+  height: 50px;
+  width: 5px;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+label {
+  font-size: 23pt;
+}
+
+input[type=text], select {
+  font-size: 12pt;
+  width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #3498DB;
+}
+
+input[type=submit] {
+  color: #96CEB4;
+  font-size: 25px;
+  width: 70%;
+  margin: 40px auto;
+}
+
+form {
+  margin: auto;
+  max-width: 40%;
+}
+
+@media screen and (max-width: 900px) {
+  section.modal {
+    left: 0;
+    transition: .3s;
+    margin-top: 60px;
+  }
+  form {
+    max-width: 60%;
+  }
+}
+@media screen and (min-width: 900px) {
+  section.modal {
+    transition: .3s;
+    left: 250px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  form {
+    max-width: 80%;
+  }
+}

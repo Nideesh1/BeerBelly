@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/font.css" />
+  <link rel="stylesheet" href="../css/signup.css" />
+</head>
+<body>
+  <h1>Sign Up</h1>
+  <div id="signup-form">
+    <form id="form">
+      <img id="profile-pic" alt="profile picture" src="../../images/profile.png">
+      <input id="image-file" type="file" accept="image/*" onchange="previewFile()">
+      <label for="email">Email:</label>
+      <input id="email" type="text" required />
+      <label for="password">Password:</label>
+      <input id="password" type="password" required />
+      <input id="submit" type="submit" value="Submit">
+      <h2>Or</h2>
+      <input id="google" type="submit" value="Google Login" />
+    </form>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="../js/jquery-3.1.1.slim.min.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="../js/signup.js"></script>
+</body>
+</html>

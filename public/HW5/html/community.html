@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Brewery Selection</title>
+  <link rel="stylesheet" href="../css/main.min.css" />
+  <link rel="stylesheet" href="../css/font.css" />
+  <link rel="stylesheet" href="../css/modal.min.css" />
+  <link rel="stylesheet" href="../css/sidebar-nav.min.css" />
+  <link rel="stylesheet" href="../css/card-content.min.css" />
+</head>
+<body>
+  <main>
+    <button id="sidebar-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <header>
+      <h1>San Diego Breweries</h1>
+    </header>
+    <section id="card-content">
+      <ul id="card-list">
+        <li id="addnew" class="newbrew">
+          <span>+ Add New</span>
+          <img src="../../images/placeholder.png" alt="new brewery">
+        </li>
+        <script id="card-template" type="text/x-jquery-tmpl">
+        <li>
+          <button class="fav"><img src="../../images/${fav}.png" alt="favorite"></button>
+          <button class="edit"><img src="../../images/edit.png" alt="edit"></button>
+          <a href="brewery.html">
+            <img class="card-image" src="${image}" alt="brewery image">
+            <p class="card-name">${name}</p>
+          </a>
+          <img class="delete" src="../../images/delete.png" alt="delete">
+          <div class="delete-confirm">
+            <span>delete?</span>
+            <a href="#" class="confirm">Yes</a>
+            <a href="#" class="cancel">No</a>
+          </div>
+        </li>
+      </script>
+      </ul>
+    </section>
+    <section id="addnew-modal" class="modal">
+      <a href="#" class="close"></a>
+      <h3>Add New Brewery</h3>
+      <img src="../../images/barrel.png" alt="brewery icon">
+      <p id="addnew-error" class="modal-error">error</p>
+      <form method="post" action="./community.html">
+        <label for="brewery-name">Brewery Name:</label>
+        <input id="brewery-name" type="text" name="name" maxlength="100" required autofocus/>
+        <label for="brewery-location">Brewery Location:</label>
+        <input id="brewery-location" type="text" name="location" maxlength="100" required/>
+        <input type="submit" value="Add">
+      </form>
+    </section>
+    <section id="edit-modal" class="modal">
+      <a href="#" class="close"></a>
+      <h3>Edit Brewery</h3>
+      <img src="../../images/barrel.png" alt="brewery icon">
+      <p id="edit-error" class="modal-error">error</p>
+      <form method="post" action="./community.html">
+        <label for="brewery-name-edit">Brewery Name:</label>
+        <input id="brewery-name-edit" type="text" name="name" maxlength="100" required/>
+        <label for="brewery-location-edit">Brewery Location:</label>
+        <input id="brewery-location-edit" type="text" name="location" maxlength="100" required/>
+        <input type="submit" value="Edit">
+      </form>
+    </section>
+  </main>
+  <nav id="sidebar">
+    <ul>
+      <li>
+        <a href="profile.html">
+          <span class="frame">
+            <img id="profile" src="../../images/profile.png" alt="profile image">
+          </span>
+        </a>
+      </li>
+      <li>Favorites
+        <ul id="user-favs">
+          <li id="fav-breweries"><a href="community.html">Breweries</a></li>
+          <li id="fav-beers"><a href="brewery.html">Beers</a></li>
+        </ul>
+      </li>
+      <li>View All
+        <ul id="view-all">
+          <li id="all-breweries"><a href="community.html">Breweries</a></li>
+          <li id="all-beers"><a href="brewery.html">Beers</a></li>
+        </ul>
+      </li>
+      <li><a class="logout" href="index.html">Sign Out</a></li>
+    </ul>
+  </nav>
+  <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+  <script src="../js/shared.js"></script>
+  <script src="../js/jquery-3.1.1.slim.min.js"></script>
+  <script src="../js/jquery.tmpl.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA38B0BD4sZtan8ZfDLXMzZYW28lYfvuyc&libraries=places"></script>
+  <script src="../js/interactions.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<!--
+  Tags used:
+
+  small
+  source
+  span
+  strong
+  style
+  sub
+  sup
+  svg
+  table
+  tbody
+  td
+  template
+  textarea
+  tfoot
+  th
+  thead
+  time
+  title
+  tr
+  track
+  u
+  ul
+  var
+  video
+  wbr
+-->
+
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Example Tags 3</title>
+  <style>
+    small {
+      color:red;
+    }
+  </style>
+</head>
+<body>
+  <p><small>This text is small.</small></p>
+  <p><audio controls>
+    <source src="mozart.mp3" type="audio/mpeg">
+  </audio></p>
+  <p>I'm using the <span style="color:blue">span</span> tag.<br>
+  This is <strong>strong</strong> text.</p>
+  <p>This text contains <sub>subscript</sub> text.</p>
+  <p>This text contains <sup>superscript</sup> text.</p>
+  <p>
+    <svg width="150" height="100" viewBox="0 0 3 2">
+      <rect width="1" height="2" x="0" fill="#008d46" />
+      <rect width="1" height="2" x="1" fill="#ffffff" />
+      <rect width="1" height="2" x="2" fill="#d2232c" />
+    </svg>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Savings</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$250</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Sum</td>
+      <td>$350</td>
+  </tfoot>
+  </table>
+  <p><textarea rows="4" cols="50">In the beginning...</textarea></p>
+  <button onclick="useIt()">Use me</button>
+  <div id="container"></div>
+  <script>
+  function useIt() {
+    var content = document.querySelector('template').content;
+    // Update something in the template DOM.
+    var span = content.querySelector('span');
+    span.textContent = parseInt(span.textContent) + 1;
+    document.querySelector('#container').appendChild(document.importNode(content, true));
+  }
+  </script>
+  <template>
+    <div>Template used: <span>0</span></div>
+    <script>alert('Thanks!')</script>
+  </template>
+  <p>We open at <time>10:00</time> every morning.</p>
+  <p>I have a date on <time datetime="2008-02-14 20:00">Valentines day</time>.</p>
+  <video width="320" height="240" controls>
+    <source src="sample_video.mp4" type="video/mp4" />
+    <track src="captions.vtt" kind="subtitles" srclang="en" label="English" />
+  </video>
+  <p>This is a <u>paragraph</u>.</p>
+  <p><var>Variable</var></p>
+  <p>To learn AJAX, you must be familiar with the XML<wbr>Http<wbr>Request Object.</p>
+  <p>To learn AJAX, you must be familiar with the XMLHttpRequest Object.</p>
+</body>
+</html>
